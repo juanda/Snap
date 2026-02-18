@@ -7840,6 +7840,10 @@ IDE_Morph.prototype.toggleAppMode = function (appMode) {
             this.corralBar.hide();
             this.corral.hide();
         }
+        // respect "blocks only" setting
+        if (this.config.noSprites) {
+            this.controlBar.stageSizeButton.hide();
+        }
     }
     this.setExtent(this.world().extent());
 };
