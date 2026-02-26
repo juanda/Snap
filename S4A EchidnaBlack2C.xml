@@ -14,8 +14,7 @@
             <headers></headers>
             <code></code>
             <blocks>
-                <block-definition s="board connected ?" type="predicate" category="S4A Connector"
-                    helper="true">
+                <block-definition s="board connected ?" type="predicate" category="S4A Connector">
                     <header></header>
                     <code></code>
                     <translations>ca:placa connectada?&#xD;es:¿placa conectada?&#xD;cs:deska
