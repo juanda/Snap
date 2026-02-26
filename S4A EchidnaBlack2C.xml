@@ -883,6 +883,48 @@
                         <block s="doIf">
                             <custom-block s="board connected ?"></custom-block>
                             <script>
+                                <block s="doIf">
+                                    <block s="reportVariadicEquals">
+                                        <list>
+                                            <block var="pin" />
+                                            <l>A6</l>
+                                        </list>
+                                    </block>
+                                    <script>
+                                        <block s="doReport">
+                                            <block s="reportVariadicGreaterThan">
+                                                <list>
+                                                    <custom-block s="analog reading %n">
+                                                        <l>6</l>
+                                                    </custom-block>
+                                                    <l>511</l>
+                                                </list>
+                                            </block>
+                                        </block>
+                                    </script>
+                                    <list></list>
+                                </block>
+                                <block s="doIf">
+                                    <block s="reportVariadicEquals">
+                                        <list>
+                                            <block var="pin" />
+                                            <l>A7</l>
+                                        </list>
+                                    </block>
+                                    <script>
+                                        <block s="doReport">
+                                            <block s="reportVariadicGreaterThan">
+                                                <list>
+                                                    <custom-block s="analog reading %n">
+                                                        <l>7</l>
+                                                    </custom-block>
+                                                    <l>511</l>
+                                                </list>
+                                            </block>
+                                        </block>
+                                    </script>
+                                    <list></list>
+                                </block>
                                 <block s="doDeclareVariables">
                                     <list>
                                         <l>pins</l>
@@ -892,7 +934,7 @@
                                 <block s="doSetVar">
                                     <l>pins</l>
                                     <block s="reportTextSplit">
-                                        <l>A0 A1 A2 A3 A6 A7 D2 D3</l>
+                                        <l>A0 A1 A2 A3 D2 D3</l>
                                         <l>
                                             <option>word</option>
                                         </l>
@@ -901,7 +943,7 @@
                                 <block s="doSetVar">
                                     <l>gpios</l>
                                     <block s="reportTextSplit">
-                                        <l>14 15 16 17 20 21 2 3</l>
+                                        <l>14 15 16 17 2 3</l>
                                         <l>
                                             <option>word</option>
                                         </l>
@@ -949,10 +991,24 @@
                         <input type="%n" readonly="true">2<options>D2=2&#xD;D3=3&#xD;D4=4&#xD;D7=7&#xD;D8=8</options></input>
                     </inputs>
                     <script>
-                        <block s="doReport">
-                            <custom-block s="digital reading %n">
-                                <block var="pin" />
-                            </custom-block>
+                        <block s="doIfElse">
+                            <custom-block s="board connected ?"></custom-block>
+                            <script>
+                                <block s="doReport">
+                                    <custom-block s="digital reading %n">
+                                        <block var="pin" />
+                                    </custom-block>
+                                </block>
+                            </script>
+                            <script>
+                                <block s="doReport">
+                                    <block s="reportBoolean">
+                                        <l>
+                                            <bool>false</bool>
+                                        </l>
+                                    </block>
+                                </block>
+                            </script>
                         </block>
                     </script>
                 </block-definition>
