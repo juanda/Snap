@@ -669,11 +669,11 @@
                         </block>
                     </script>
                 </block-definition>
-                <block-definition s="$🅴-1.5-230-106-0 %&apos;switch&apos; buzzer" type="command"
+                <block-definition s="$🅴-1.5-230-106-0 buzzer %&apos;switch&apos;" type="command"
                     category="S4A Connector">
                     <header></header>
                     <code></code>
-                    <translations>es:$🅴-1.5-230-106-0 _ zumbador&#xD;</translations>
+                    <translations>es:$🅴-1.5-230-106-0 zumbador _&#xD;</translations>
                     <inputs>
                         <input type="%b"></input>
                     </inputs>
@@ -1215,15 +1215,9 @@
                                     <list></list>
                                 </block>
                                 <block s="doReport">
-                                    <block s="reportQuotient">
-                                        <block s="reportDifference">
-                                            <custom-block s="analog reading %n">
-                                                <block var="pin" />
-                                            </custom-block>
-                                            <l>512</l>
-                                        </block>
-                                        <l>512</l>
-                                    </block>
+                                    <custom-block s="analog reading %n">
+                                        <block var="pin" />
+                                    </custom-block>
                                 </block>
                             </script>
                             <script>
